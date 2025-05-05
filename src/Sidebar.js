@@ -23,7 +23,25 @@ function Sidebar() {
             <span className="icon">📋</span>
             <span className="label">Certificates</span>
           </Link>
-      
+          {/* Submenu for Certificates */}
+          <div style={{ marginLeft: 24 }}>
+            <Link 
+              to="/articles" 
+              className={`nav-item ${isActivePath('/articles') ? 'active' : ''}`}
+              style={{ fontSize: '15px' }}
+            >
+              <span className="icon">📚</span>
+              <span className="label">By Article</span>
+            </Link>
+            <Link 
+              to="/pos" 
+              className={`nav-item ${isActivePath('/pos') ? 'active' : ''}`}
+              style={{ fontSize: '15px' }}
+            >
+              <span className="icon">#️⃣</span>
+              <span className="label">By PO</span>
+            </Link>
+          </div>
         </div>
 
         <div className="nav-section">
@@ -78,18 +96,12 @@ function Sidebar() {
           </Link>
           <Link 
             to="/a01/appendix2" 
-            className={`nav-item ${isActivePath('/a01/appendix2') && path !== '/a01/appendix2/add' ? 'active' : ''}`}
+            className={`nav-item ${isActivePath('/a01/appendix2') ? 'active' : ''}`}
           >
             <span className="icon">📄</span>
             <span className="label">Appendix 2</span>
           </Link>
-          <Link 
-            to="/a01/appendix2/add" 
-            className={`nav-item ${path === '/a01/appendix2/add' ? 'active' : ''}`}
-          >
-            <span className="icon">➕</span>
-            <span className="label">Add Appendix 2</span>
-          </Link>
+        
         </div>
       </nav>
     </div>

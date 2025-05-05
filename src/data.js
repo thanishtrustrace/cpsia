@@ -54,16 +54,44 @@ function generateRandomArticleId() {
 }
 
 // Generate 78 entries
-const cpcData = Array(78).fill(null).map((_, index) => ({
-  id: index + 1,
-  certificateId: generateRandomCertificateId(),
-  brand: brandOptions[Math.floor(Math.random() * brandOptions.length)],
-  articleId: generateRandomArticleId(),
-  productType: productTypeOptions[Math.floor(Math.random() * productTypeOptions.length)],
-  t1Factory: t1FactoryOptions[Math.floor(Math.random() * t1FactoryOptions.length)],
-  prodMonth: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][Math.floor(Math.random() * 6)] + ' 2024',
-  lastUpdatedOn: new Date(2024, 0, Math.floor(Math.random() * 120)).toISOString().split('T')[0]
-}));
+const brands = ['adidas', 'Reebok', 'Puma', 'Nike', 'Under Armour'];
+const productTypes = [
+  'Children Apparel', 'Adult Apparel', 'Children Footwear', 'Children Accessories',
+  'Children Sleepwear', 'Children Sport Equipment', 'Gift with Purchase (Toy)', 'Gift with Purchase (non-toy)'
+];
+const descriptions = [
+  'Kids Performance T-Shirt', 'Men\'s Running Jacket', 'Kids Soccer Cleats', 'Girls Sun Hat',
+  'Boys Pajama Set', 'Kids Cap', 'Girls Training Shorts', 'Boys Training Shorts',
+  'Kids Running Shoes', 'Kids Soccer Ball', 'Youth Sports Jersey', 'Junior Golf Gloves',
+  'Kids Raincoat', 'Kids Backpack', 'Kids Socks', 'Kids Gloves', 'Kids Pajama Set', 'Kids Hoodie'
+];
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const cpcData = Array.from({ length: 68 }, (_, i) => {
+  const idx = i + 1;
+  const brand = brands[i % brands.length];
+  const productType = productTypes[i % productTypes.length];
+  const productDescription = descriptions[i % descriptions.length];
+  const productId = `ART-${1000 + idx}`;
+  const poCount = 2 + (i % 3); // 2-4 POs
+  const poNo = Array.from({ length: poCount }, (_, j) => `PO-${10000 + idx * 10 + j}`);
+  const t1Factory = t1FactoryOptions[i % t1FactoryOptions.length];
+  const prodMonth = `${months[i % 12]} 2024`;
+  const lastUpdatedOn = `2024-${String((i % 12) + 1).padStart(2, '0')}-${String((i % 28) + 1).padStart(2, '0')}`;
+  return {
+    id: `CPC-${String(idx).padStart(3, '0')}`,
+    certificateId: `CERT-${100000 + idx}`,
+    articleId: productId,
+    productId: { value: productId, label: productId },
+    brand,
+    productType,
+    productDescription,
+    poNo,
+    t1Factory,
+    prodMonth,
+    lastUpdatedOn
+  };
+});
 
 // Product master data
 const productMasterData = [

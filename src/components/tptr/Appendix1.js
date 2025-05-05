@@ -12,7 +12,8 @@ const appendix1Requests = [
     supplier: "Elite Sportswear Inc.",
     dueDate: "2024-04-10",
     dateSubmitted: "2024-04-09",
-    status: "Submitted on time"
+    status: "Submitted on time",
+    versionNumber: "v1.0"
   },
   {
     id: "A01-REQ-002",
@@ -20,7 +21,8 @@ const appendix1Requests = [
     supplier: "Elite Sportswear Inc.",
     dueDate: "2024-04-15",
     dateSubmitted: "2024-04-18",
-    status: "Submitted after due date"
+    status: "Submitted after due date",
+    versionNumber: "v1.1"
   },
   {
     id: "A01-REQ-003",
@@ -28,7 +30,8 @@ const appendix1Requests = [
     supplier: "Elite Sportswear Inc.",
     dueDate: "2024-04-20",
     dateSubmitted: "",
-    status: "Pending"
+    status: "Pending",
+    versionNumber: "v2.0"
   }
   // ...add more as needed
 ];
@@ -66,6 +69,7 @@ function Appendix1() {
               <th style={{ padding: 12, textAlign: 'left' }}>Due Date</th>
               <th style={{ padding: 12, textAlign: 'left' }}>Date Submitted</th>
               <th style={{ padding: 12, textAlign: 'left' }}>Status</th>
+              <th style={{ padding: 12, textAlign: 'left' }}>Appendix 1 Version Number</th>
               <th style={{ padding: 12, textAlign: 'left' }}>Action</th>
             </tr>
           </thead>
@@ -86,6 +90,7 @@ function Appendix1() {
                     {req.status}
                   </span>
                 </td>
+                <td style={{ padding: 12 }}>{req.versionNumber}</td>
                 <td style={{ padding: 12 }}>
                   {req.status === "Pending" ? (
                     <button
