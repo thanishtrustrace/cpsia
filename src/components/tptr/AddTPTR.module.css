@@ -1,0 +1,125 @@
+.addTptrContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.complianceGroup {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.complianceHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.complianceHeader input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.complianceHeader span {
+  font-weight: 500;
+}
+
+.tptrTypeGroup {
+  margin-left: 28px;
+}
+
+.fileUpload {
+  margin-top: 12px;
+}
+
+.fileUpload label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.fileUpload input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px dashed #d1d5db;
+  border-radius: 6px;
+  background-color: #f9fafb;
+}
+
+.formActions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitButton {
+  padding: 10px 24px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #4338ca;
+}
+
+/* React-Select custom styles */
+:global(.react-select-container) {
+  width: 100%;
+}
+
+:global(.react-select__control) {
+  min-height: 42px !important;
+  border-color: #d1d5db !important;
+}
+
+:global(.react-select__control--is-focused) {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 1px #4f46e5 !important;
+}
+
+:global(.react-select__menu) {
+  z-index: 100;
+}
+
+:global(.react-select__option--is-selected) {
+  background-color: #4f46e5 !important;
+}
+
+:global(.react-select__option--is-focused) {
+  background-color: #eef2ff !important;
+} 

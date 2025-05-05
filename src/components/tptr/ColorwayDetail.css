@@ -1,0 +1,21 @@
+/* Copy the same styles from ArticleModelDetail.css and add these specific styles */
+
+.applications-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.application-item {
+  background: #f3f4f6;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.header-icon {
+  color: #6b7280;
+  margin-right: 8px;
+} 

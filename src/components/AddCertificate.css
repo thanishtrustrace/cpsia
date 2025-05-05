@@ -1,0 +1,430 @@
+.add-certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: start;
+}
+
+.form-group {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #111827;
+  background-color: white;
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px #4f46e5;
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding-right: 40px;
+}
+
+textarea.form-input {
+  min-height: 42px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.submit-button {
+  width: auto;
+  min-width: 120px;
+  padding: 10px 24px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #4338ca;
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #4f46e5;
+}
+
+@media (max-width: 768px) {
+  .two-column,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .add-certificate-container {
+    padding: 16px;
+  }
+}
+
+.react-select-container {
+  width: 100%;
+}
+
+.react-select__control {
+  min-height: 42px !important;
+  border-color: #d1d5db !important;
+}
+
+.react-select__control--is-focused {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 1px #4f46e5 !important;
+}
+
+.react-select__menu {
+  z-index: 100;
+}
+
+.form-input[readonly] {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  color: #6b7280;
+}
+
+.location-select {
+  width: 100%;
+}
+
+.form-input:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+.regulations-section {
+  margin-bottom: 32px;
+}
+
+.regulations-container {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.regulation-item {
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.regulation-item:last-child {
+  border-bottom: none;
+}
+
+.regulation-item:hover {
+  background-color: #f9fafb;
+}
+
+.regulation-item.applicable {
+  background-color: #f0f9ff;
+  border-left: 3px solid #4f46e5;
+  padding-left: 12px;
+}
+
+.regulation-label {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.regulation-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.regulation-checkbox:checked + .custom-checkbox {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.regulation-checkbox:checked + .custom-checkbox::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.regulation-content {
+  flex: 1;
+  padding-left: 12px;
+}
+
+.regulation-title {
+  display: block;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.regulation-description {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.exemption-options {
+  margin-top: 12px;
+  padding-left: 24px;
+  display: flex;
+  gap: 24px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #4f46e5;
+}
+
+.radio-text {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Scrollbar styling */
+.regulations-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.regulations-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.regulations-container::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.regulations-container::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Add hover states */
+.regulation-label:hover .custom-checkbox {
+  border-color: #4f46e5;
+}
+
+.radio-label:hover .radio-text {
+  color: #4f46e5;
+}
+
+/* Focus states for accessibility */
+.regulation-checkbox:focus + .custom-checkbox {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #4f46e5;
+}
+
+.radio-label input[type="radio"]:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Add these styles for multi-select */
+.react-select__multi-value {
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.react-select__multi-value__label {
+  color: #111827;
+  font-size: 0.85em;
+  padding: 3px 6px;
+}
+
+.react-select__multi-value__remove {
+  color: #6b7280;
+  cursor: pointer;
+  padding: 2px;
+}
+
+/* Add these styles for better multi-select appearance */
+.react-select__control {
+  min-height: 42px !important;
+}
+
+.react-select__multi-value {
+  background-color: #f3f4f6 !important;
+  border-radius: 4px !important;
+  margin: 2px !important;
+}
+
+.react-select__multi-value__label {
+  color: #111827 !important;
+  font-size: 0.85em !important;
+  padding: 3px 6px !important;
+}
+
+.react-select__multi-value__remove {
+  color: #6b7280 !important;
+  cursor: pointer !important;
+  padding: 2px !important;
+}
+
+.react-select__multi-value__remove:hover {
+  background-color: #e5e7eb !important;
+  color: #111827 !important;
+  border-radius: 2px !important;
+}
+
+.react-select__value-container {
+  min-height: 42px !important;
+  padding: 2px 12px !important;
+}
+
+.react-select__value-container--is-multi {
+  min-height: 38px !important;
+}
+
+.react-select__placeholder {
+  color: #9ca3af !important;
+}
+
+.react-select__input {
+  color: #111827 !important;
+}
+
+.react-select__control--is-disabled {
+  background-color: #f9fafb !important;
+  cursor: not-allowed !important;
+}
+
+.react-select__single-value {
+  color: #111827 !important;
+}
+
+.react-select__single-value--is-disabled {
+  color: #6b7280 !important;
+}
+
+.auto-selected-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 12px;
+  border-radius: 12px;
+  font-weight: normal;
+}
+
+.regulation-checkbox:disabled + .custom-checkbox {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.regulation-checkbox:disabled:checked + .custom-checkbox {
+  background-color: #4f46e5;
+  opacity: 0.7;
+} 
